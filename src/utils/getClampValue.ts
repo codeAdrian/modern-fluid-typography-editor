@@ -1,2 +1,4 @@
+import { setToPrecision } from './setToPrecision';
+
 export const getClampValue = ([min, fluid, relative, max]: [number, number, number, number]) =>
-	`clamp(${min}rem, ${fluid}vw + ${relative}rem, ${max}rem);`;
+	`clamp(${setToPrecision(min, 3)}rem, ${fluid}vw + ${relative}rem, ${setToPrecision(max, 3)}rem);`;
