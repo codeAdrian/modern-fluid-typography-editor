@@ -1,39 +1,27 @@
 import type { ChartConfiguration } from 'chart.js';
-
-const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-
-const getValue = (x, min, max) => clamp((2 / 100) * x + 16, min, max);
+import { externalTooltipHandler } from './customTooltip';
 
 export const CHART_OPTIONS: ChartConfiguration<'line'> = {
 	type: 'scatter',
 	data: {
 		datasets: [
 			{
-				data: [0, 800, 1600, 2200].map((x) => ({ x, y: getValue(x, 32, 48) })),
-				fill: false,
 				borderColor: 'rgb(75, 192, 192)',
 				tension: 0,
 				showLine: true,
-				pointRadius: 2,
 				lineTension: 0,
-				interpolate: true
+				interpolate: true,
+				pointRadius: 0,
+				borderWidth: 4,
+				borderJoinStyle: 'round',
+				borderCapStyle: 'round',
+				fill: true
 			}
 		]
 	},
 	options: {
 		animation: false,
-		tooltips: {
-			mode: 'interpolate',
-			intersect: false,
-			callbacks: {
-				title: function (a, d) {
-					return a[0].element.y.toFixed(2);
-				},
-				label: function (i, d) {
-					return 'WOOP';
-				}
-			}
-		},
+		responsive: true,
 		plugins: {
 			legend: {
 				display: false
@@ -43,31 +31,51 @@ export const CHART_OPTIONS: ChartConfiguration<'line'> = {
 				sync: { enabled: false }
 			},
 			tooltip: {
+				enabled: false,
 				mode: 'interpolate',
 				intersect: false,
+				yAlign: 'bottom',
+				external: externalTooltipHandler,
 				callbacks: {
-					title: function (a, d) {
-						return Math.round(a[0].element.y);
+					title: function (a) {
+						const { x, y } = a[0].element;
+						return `${Math.round(y)}px at ${Math.round(x)}px`;
 					},
-					label: function (i, d) {
-						return 'WOOP';
-					}
+					label: () => null
 				}
 			}
 		},
 		scales: {
 			x: {
-				min: 250,
-				max: 2000,
+				min: 200,
+				suggestedMax: 1024,
 				type: 'linear',
+				title: { text: 'Viewport width', display: true },
 				grid: {
-					display: false
+					drawTicks: false,
+					borderDash: [16, 16],
+					lineWidth: 2
+				},
+
+				ticks: {
+					padding: 12,
+					callback: function (value, index, values) {
+						return value + 'px';
+					}
 				}
 			},
 			y: {
 				min: 0,
+				suggestedMin: 16,
+				suggestedMax: 48,
+				title: { text: 'Fluid size', display: true },
 				grid: {
 					display: false
+				},
+				ticks: {
+					callback: function (value, index, values) {
+						return value + 'px';
+					}
 				}
 			}
 		}

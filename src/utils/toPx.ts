@@ -1,1 +1,1 @@
-export const toPx = (value: number, rootFontSize: number) => value * rootFontSize;
+export const toPx = ([relativeSize, rootFontSize]: [number, number]) => relativeSize * rootFontSize;
