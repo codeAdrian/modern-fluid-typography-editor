@@ -1,10 +1,7 @@
 <script>
 	import Message from 'components/Message.svelte';
-	import Snippet from 'components/Snippet.svelte';
 	import { clampValue, minSize, maxSize, relativeSize } from 'src/modules/form/store';
 </script>
-
-<Snippet text={$clampValue} />
 
 {#if $minSize >= $maxSize}
 	<Message type="error">

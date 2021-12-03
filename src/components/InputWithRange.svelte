@@ -55,6 +55,7 @@
 		border-left: inherit;
 		min-width: calc(4ch + 2 * var(--spacing-n2));
 		text-align: center;
+		color: var(--color-secondary);
 	}
 
 	.input__range {

@@ -36,7 +36,6 @@
 <style>
 	canvas {
 		cursor: crosshair;
-		margin-left: calc(-1 * var(--spacing-n1));
 		width: 100%;
 		max-width: 100%;
 	}

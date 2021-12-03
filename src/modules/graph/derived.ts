@@ -57,9 +57,6 @@ export const graphEnd = derived(
 export const graphPoints = derived(
 	[graphStart, graphChangeStart, graphChangeEnd, graphEnd],
 	([$graphStart, $graphChangeStart, $graphChangeEnd, $graphEnd]) => {
-		console.log(
-			[$graphStart, $graphChangeStart, $graphChangeEnd, $graphEnd].sort((a, b) => a.x - b.x)
-		);
 		return [$graphStart, $graphChangeStart, $graphChangeEnd, $graphEnd].sort((a, b) => a.x - b.x);
 	}
 );

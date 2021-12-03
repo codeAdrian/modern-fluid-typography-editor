@@ -1,11 +1,11 @@
 <script>
-    export let type;
+	export let type;
 </script>
 
 {#if type == 'warning'}
-<div>Warning: <slot /></div>
+	<div>Warning: <slot /></div>
 {/if}
 
 {#if type == 'error'}
-<div>Error: <slot /></div>
+	<div>Error: <slot /></div>
 {/if}

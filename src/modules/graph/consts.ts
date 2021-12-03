@@ -70,10 +70,10 @@ export const CHART_OPTIONS: ChartConfiguration<'line'> = {
 					stepSize: 1,
 					count: 12,
 					precision: 0,
-					padding: 12,
+					padding: 10,
 					color: (c) =>
 						c['tick']['value'] <= 1400 ? 'hsla(215, 22%, 85%, 0.6)' : 'hsla(308, 90%, 44%, 0.9)',
-					font: { size: 16, weight: '800' }
+					font: { size: 14 }
 				}
 			},
 			y: {
@@ -94,8 +94,8 @@ export const CHART_OPTIONS: ChartConfiguration<'line'> = {
 					color: 'hsla(182, 29%, 51%, 0.25)'
 				},
 				ticks: {
-					padding: 12,
-					font: { size: 16, weight: '800' },
+					padding: 8,
+					font: { size: 14 },
 					color: 'hsla(215, 22%, 85%, 0.6)',
 					callback: function (value, index) {
 						return index === 0 ? '' : value;

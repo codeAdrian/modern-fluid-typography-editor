@@ -2,8 +2,10 @@
 	import Form from 'modules/form/Form.svelte';
 	import Graph from 'modules/graph/Graph.svelte';
 	import Tabs from 'modules/tabs/Tabs.svelte';
+	import Snippet from 'src/components/Snippet.svelte';
 	import Stats from 'src/components/Stats.svelte';
 	import Section from 'src/modules/code/Section.svelte';
+	import { clampValue } from 'src/modules/form/store';
 	import { graphChangeEnd, graphChangeStart } from 'src/modules/graph/derived';
 	import Tracker from 'src/modules/tracker/Tracker.svelte';
 </script>
@@ -20,8 +22,9 @@
 				<Graph slot="0" />
 			{:else}
 				<Tracker slot="1" />
-				<Stats start={$graphChangeStart.x} end={$graphChangeEnd.x} />
 			{/if}
+
+			<Snippet text={$clampValue} slot="util" />
 		</Tabs>
 
 		<Section />
@@ -31,8 +34,8 @@
 <style>
 	.homepage {
 		display: grid;
-		grid-template-columns: 200px auto;
+		grid-template-columns: 250px auto;
 		grid-gap: var(--spacing-2);
-		padding: var(--spacing-1);
+		padding: 0 var(--spacing-2);
 	}
 </style>
