@@ -30,15 +30,9 @@
 
 <style>
 	.homepage {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	.homepage__aside {
-		flex: 1 1 250px;
-	}
-
-	.homepage__content {
-		flex: 1 0 70%;
+		display: grid;
+		grid-template-columns: 200px auto;
+		grid-gap: var(--spacing-2);
+		padding: var(--spacing-1);
 	}
 </style>

@@ -14,8 +14,8 @@
 		Chart.register(CrosshairPlugin, ...registerables);
 		chart = new Chart(canvas?.getContext('2d'), chartOptions);
 		var gradientFill = chart.ctx.createLinearGradient(0, 0, 0, chart.chartArea.height);
-		gradientFill.addColorStop(0, 'hsla(230, 50%, 50%, 0.2)');
-		gradientFill.addColorStop(0.75, 'hsla(210, 50%, 50%, 0)');
+		gradientFill.addColorStop(0, 'hsla(182, 29%, 51%, 0.17)');
+		gradientFill.addColorStop(1, 'hsla(182, 29%, 51%, 0)');
 		chart.options.backgroundColor = gradientFill;
 
 		chart.data.datasets[0].data = data;
@@ -36,5 +36,8 @@
 <style>
 	canvas {
 		cursor: crosshair;
+		margin-left: calc(-1 * var(--spacing-n1));
+		width: 100%;
+		max-width: 100%;
 	}
 </style>

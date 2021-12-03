@@ -31,6 +31,8 @@
 	"type": "module",
 	"dependencies": {
 		"chart.js": "^3.4.0",
-		"chartjs-plugin-crosshair": "^1.2.0"
+		"chartjs-plugin-crosshair": "^1.2.0",
+		"cssnano": "^5.0.12",
+		"postcss-preset-env": "^7.0.1"
 	}
 }

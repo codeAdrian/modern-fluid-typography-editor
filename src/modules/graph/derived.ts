@@ -42,10 +42,10 @@ export const graphEnd = derived(
 	[minSize, maxSize, fluidSize, relativeSizePx, graphChangeEnd],
 	([$minSize, $maxSize, $fluidSize, $relativeSizePx, $graphChangeEnd]) => {
 		if ($minSize >= $maxSize) {
-			return { x: 1800, y: $minSize };
+			return { x: 1400, y: $minSize };
 		}
 
-		const x = Math.max($graphChangeEnd.x + 100, 1800);
+		const x = Math.max($graphChangeEnd.x + 100, 1400);
 
 		return {
 			x,

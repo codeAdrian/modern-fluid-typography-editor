@@ -4,9 +4,9 @@ import { toRem } from 'src/utils/toRem';
 import { derived, writable } from 'svelte/store';
 
 const rootFontSize = writable(16);
-const minSize = writable(32);
-const maxSize = writable(48);
-const fluidSize = writable(3);
+const minSize = writable(24);
+const maxSize = writable(36);
+const fluidSize = writable(2);
 const relativeSize = writable(1);
 
 const minSizeRem = derived([minSize, rootFontSize], toRem);
