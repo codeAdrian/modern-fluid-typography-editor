@@ -1,11 +1,9 @@
 <script>
-	import AddValue from './AddValue.svelte';
 	import { trackersAsc, trackersDesc } from './derived';
 	import Sort from './Sort.svelte';
 	import TableDataRow from './TableDataRow.svelte';
 
 	let isAsc = true;
-	let isEditing = false;
 
 	$: items = isAsc ? $trackersAsc : $trackersDesc;
 
@@ -14,23 +12,19 @@
 	};
 </script>
 
-<article class="tracker-wrapper">
+<div class:tracker-wrapper--overflow={items.length > 10} class="tracker-wrapper">
 	<table class="tracker">
 		<thead>
 			<tr>
 				<th>
-					<button on:click={() => (isEditing = true)}>Add</button>
+					<Sort {isAsc} {handleClick} />
 					Screen width
-					<Sort {handleClick} />
 				</th>
 				<th colspan="2">Fluid size</th>
 				<th />
 			</tr>
 		</thead>
 		<tbody>
-			{#if isEditing}
-				<AddValue onAdd={() => (isEditing = false)} />
-			{/if}
 			{#key `${isAsc ? 'asc' : 'desc'}`}
 				{#each items as item}
 					<TableDataRow {isAsc} {...item} />
@@ -38,15 +32,19 @@
 			{/key}
 		</tbody>
 	</table>
-</article>
+</div>
 
 <style>
 	.tracker-wrapper {
-		border-radius: var(--spacing-n2);
-		border: 2px solid var(--color-gray-light);
-		max-height: 420px;
+		border-radius: var(--spacing-n5);
+		border: 3px solid var(--color-gray-light);
+	}
+
+	.tracker-wrapper--overflow {
+		max-height: 486px;
 		overflow: auto;
 	}
+
 	.tracker {
 		border-collapse: collapse;
 		font-weight: 700;
@@ -66,6 +64,7 @@
 
 	.tracker :global(th),
 	.tracker :global(td) {
-		padding: var(--spacing-n2) var(--spacing-1);
+		line-height: 1;
+		padding: var(--spacing-n1) var(--spacing-1);
 	}
 </style>

@@ -20,7 +20,7 @@
 		'Created according to the Great Convention by',
 		'TODO: Some witty subtitle will be added here by',
 		'As decreed by Leto II, this was created by',
-		'Created by a Spacing guild traveller by the name of',
+		'Created by a Spacing guild traveller',
 		'Created according to the Shadow Proclamation by',
 		'Created according to the Codex Astartes by',
 		'Created by a fremen sandrider by the name of',

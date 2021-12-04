@@ -2,9 +2,8 @@
 	import { trackers } from './store';
 	import { generateUniqueId } from './utils';
 
-	export let onAdd;
-
 	let screenWidth;
+	let form;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -14,42 +13,68 @@
 		}
 
 		trackers.update((v) => [...v, { id, width: screenWidth }]);
-		onAdd();
+		form.reset();
 	};
 </script>
 
-<tr class="form">
-	<td>
-		<form on:submit={handleSubmit}>
-			<label class="visually-hidden form__label" for="track-screen-width"
-				>Add screen value to track</label
-			>
-			<input id="track-screen-width" type="number" min={0} required bind:value={screenWidth} />
-			<button type="submit">Add</button>
-		</form>
-	</td>
-	<td />
-	<td />
-	<td />
-</tr>
+<div>
+	<label class="form__label" for="track-screen-width">Add screen value to track</label>
+</div>
+<form class="form" bind:this={form} on:submit={handleSubmit}>
+	<button class="form__button" type="submit"><i class="fa-solid fa-plus" /></button>
+	<input
+		class="form__input"
+		id="track-screen-width"
+		type="number"
+		min={0}
+		required
+		bind:value={screenWidth}
+	/>
+	<span class="form__unit">px</span>
+</form>
 
 <style>
 	.form {
+		border-radius: var(--spacing-n2);
+		border: 2px solid var(--color-secondary);
+		display: inline-flex;
 		background-color: var(--color-secondary-faded);
-		padding: var(--spacing-1);
-		border-radius: var(--spacing-n1);
+		margin-bottom: var(--spacing-1);
 	}
 
 	.form__label {
 		font-family: var(--font-family-primary);
+		margin-bottom: var(--spacing-n2);
+		display: inline-block;
 	}
-	.visually-hidden {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
+
+	.form__input,
+	.form__button,
+	.form__unit {
+		background-color: transparent;
+		border-width: 0;
+		padding: var(--spacing-n1) var(--spacing-n1);
+		line-height: 1;
+	}
+
+	.form__input {
+		font-weight: var(--font-weight-bold);
+		color: var(--color-gray-light);
+		outline: 0;
+	}
+
+	.form__button {
+		color: var(--color-secondary);
+		font-size: var(--font-size-medium);
+		color: var(--color-secondary);
+		border-right: 2px solid var(--color-secondary);
+	}
+
+	.form__unit {
+		font-weight: var(--font-weight-bold);
+		color: var(--color-secondary);
+		border-left: 2px solid var(--color-secondary);
+		line-height: 1.5;
+		padding: var(--spacing-n1);
 	}
 </style>

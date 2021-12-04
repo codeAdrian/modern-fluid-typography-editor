@@ -4,7 +4,7 @@
 	let activeTab = 0;
 </script>
 
-<section class="tabs-wrapper">
+<article class="tabs-wrapper">
 	<slot name="util" />
 	<nav class="tabs">
 		{#each tabs as label, index}
@@ -17,7 +17,7 @@
 			>
 		{/each}
 	</nav>
-</section>
+</article>
 
 <slot {activeTab} />
 
@@ -26,7 +26,7 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
-		margin-bottom: var(--spacing-2);
+		margin-bottom: var(--spacing-1);
 		isolation: isolate;
 	}
 
