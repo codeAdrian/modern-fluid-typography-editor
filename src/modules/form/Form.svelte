@@ -1,5 +1,6 @@
 <script>
 	import Input from 'components/InputWithRange.svelte';
+	import Message from 'src/components/Message.svelte';
 	import { fluidSize, maxSize, minSize, relativeSize, rootFontSize } from './store';
 </script>
 
@@ -12,27 +13,55 @@
 			min={1}
 			max={64}
 			value={rootFontSize}
-		/>
+		>
+			{#if $rootFontSize <= 0}
+				<Message id="root-font-size" type="error">Incorrect font size value.</Message>
+			{/if}
+		</Input>
 	</li>
 	<li>
-		<Input id="min-size" unit="px" label="Min size" min={1} max={128} step={1} value={minSize} />
+		<Input id="min-size" unit="px" label="Min size" min={1} max={128} step={1} value={minSize}>
+			{#if $minSize > $maxSize}
+				<Message id="min-max-size" type="error">
+					Fluid snippet doesn't have any effect. Minimum size is larger than maximum size.
+				</Message>
+			{/if}
+		</Input>
 	</li>
 	<li>
-		<Input id="max-size" unit="px" label="Max size" min={1} max={128} step={1} value={maxSize} />
+		<Input id="max-size" unit="px" label="Max size" min={1} max={128} step={1} value={maxSize}>
+			{#if $minSize > $maxSize}
+				<Message id="min-max-size" type="error">
+					Fluid snippet doesn't have any effect. Minimum size is larger than maximum size.
+				</Message>
+			{/if}
+		</Input>
 	</li>
 	<li>
-		<Input id="fluid-size" unit="vw" label="Fluid size" min={1} max={10} value={fluidSize} />
+		<Input id="fluid-size" unit="vw" label="Fluid size" min={-5} max={5} value={fluidSize}>
+			{#if $fluidSize === 0}
+				<Message id="fluid-size" type="warning"
+					>Fluid snippet doesn't have any effect. Fluid size should be above 0</Message
+				>
+			{/if}
+		</Input>
 	</li>
 	<li>
 		<Input
 			id="relative-size"
 			unit="rem"
 			label="Relative size"
-			min={-2}
-			max={2}
+			min={-3}
+			max={3}
 			step={0.25}
 			value={relativeSize}
-		/>
+		>
+			{#if $relativeSize > -1 && $relativeSize < 1}
+				<Message id="relative-size" type="warning"
+					>Value should be -1 and less or 1 and more to support user font size settings.</Message
+				>
+			{/if}
+		</Input>
 	</li>
 </ul>
 

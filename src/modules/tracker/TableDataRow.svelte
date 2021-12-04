@@ -38,8 +38,12 @@
 		{setToPrecision(sizeValue / $rootFontSize, 3)}rem
 	</td>
 	<td>
-		<button class="data__button" on:click={handleRemove} data-id={id}
-			><i class="fa-solid fa-trash-can" /></button
+		<button
+			class="data__button"
+			class:data__button--max={sizeValue === $maxSize}
+			class:data__button--min={sizeValue === $minSize}
+			on:click={handleRemove}
+			data-id={id}><i class="fa-solid fa-trash-can" /></button
 		>
 	</td>
 </tr>
@@ -58,8 +62,16 @@
 		border-top: 3px solid var(--color-primary-tint);
 	}
 
+	:global(.data--asc.data:not(.data--min):not(.data--max)) + .data--min {
+		border-top: 3px solid var(--color-secondary-tint);
+	}
+
 	:global(.data--desc.data:not(.data--max):not(.data--min)) + .data--min {
 		border-top: 3px solid var(--color-secondary-tint);
+	}
+
+	:global(.data--desc.data:not(.data--max):not(.data--min)) + .data--max {
+		border-top: 3px solid var(--color-primary-tint);
 	}
 
 	.data--min {
@@ -74,9 +86,41 @@
 		border-top: 3px solid var(--color-primary-tint);
 	}
 
+	.data--desc.data--min + :global(.data:not(.data--min)) {
+		border-top: 3px solid var(--color-secondary-tint);
+	}
+
+	.data--asc.data--max + :global(.data:not(.data--max)) {
+		border-top: 3px solid var(--color-primary-tint);
+	}
+
 	.data__button {
-		color: var(--color-secondary);
+		color: var(--color-gray-light);
 		background: transparent;
 		border-width: 0;
+		cursor: pointer;
+	}
+
+	.data__button:hover,
+	.data__button:active {
+		color: var(--color-gray-lightest);
+	}
+
+	.data__button--min {
+		color: var(--color-secondary-tint);
+	}
+
+	.data__button--min:hover,
+	.data__button--min:active {
+		color: var(--color-secondary);
+	}
+
+	.data__button--max {
+		color: var(--color-primary-tint);
+	}
+
+	.data__button--max:hover,
+	.data__button--max:active {
+		color: var(--color-primary);
 	}
 </style>

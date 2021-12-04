@@ -72,7 +72,7 @@ export const CHART_OPTIONS: ChartConfiguration<'line'> = {
 					precision: 0,
 					padding: 10,
 					color: (c) =>
-						c['tick']['value'] <= 1400 ? 'hsla(215, 22%, 85%, 0.6)' : 'hsla(308, 90%, 44%, 0.9)',
+						c['tick']['value'] <= 1400 ? 'hsla(215, 22%, 85%, 0.8)' : 'hsla(215, 22%, 85%, 0.5)',
 					font: { size: 14 }
 				}
 			},

@@ -5,8 +5,7 @@
 	import Legend from 'src/components/Legend.svelte';
 	import Snippet from 'src/components/Snippet.svelte';
 	import Stats from 'src/components/Stats.svelte';
-	import Section from 'src/modules/code/Section.svelte';
-	import { clampValue } from 'src/modules/form/store';
+	import { clampValue, maxSize, minSize } from 'src/modules/form/store';
 	import { graphChangeEnd, graphChangeStart } from 'src/modules/graph/derived';
 	import AddValue from 'src/modules/tracker/AddValue.svelte';
 	import Tracker from 'src/modules/tracker/Tracker.svelte';
@@ -18,20 +17,25 @@
 	</aside>
 
 	<section class="homepage__content">
-		<Tabs tabs={['Graph', 'Custom points']} let:activeTab>
+		<Tabs tabs={['Graph', 'Table']} let:activeTab>
 			{#if activeTab === 0}
-				<Stats start={$graphChangeStart.x} end={$graphChangeEnd.x} />
+				<Stats
+					minValue={$minSize}
+					maxValue={$maxSize}
+					start={$graphChangeStart.x}
+					end={$graphChangeEnd.x}
+				/>
 				<Graph />
 			{:else}
 				<AddValue />
-				<Tracker />
-				<Legend />
+				<div class="homepage__wrapper">
+					<Tracker />
+					<Legend />
+				</div>
 			{/if}
 
 			<Snippet text={$clampValue} slot="util" />
 		</Tabs>
-
-		<Section />
 	</section>
 </main>
 
@@ -39,7 +43,14 @@
 	.homepage {
 		display: grid;
 		grid-template-columns: 250px auto;
-		grid-gap: var(--spacing-2);
+		grid-gap: var(--spacing-4);
 		padding: 0 var(--spacing-2);
+	}
+
+	.homepage__wrapper {
+		display: grid;
+		grid-template-columns: 500px 1fr;
+		grid-gap: var(--spacing-2);
+		align-items: flex-start;
 	}
 </style>

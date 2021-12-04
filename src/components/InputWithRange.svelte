@@ -6,11 +6,13 @@
 </script>
 
 <label class="input__label" for={id}>{label}</label>
+<slot />
 <div class="input__wrapper">
 	<input class="input__element" type="number" bind:value={$value} {id} {...$$restProps} />
 	<span class="input__unit">{unit}</span>
 </div>
 <input
+	aria-labelledby={id}
 	class="input__range"
 	type="range"
 	list={`${id}-tickmarks`}
@@ -21,7 +23,7 @@
 <style>
 	.input__label {
 		font-family: var(--font-family-primary);
-		display: block;
+		display: inline-block;
 		margin-bottom: var(--spacing-n2);
 	}
 

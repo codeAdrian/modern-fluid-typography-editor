@@ -12,7 +12,7 @@
 	};
 </script>
 
-<div class:tracker-wrapper--overflow={items.length > 10} class="tracker-wrapper">
+<div class:tracker-wrapper--overflow={items.length > 9} class="tracker-wrapper">
 	<table class="tracker">
 		<thead>
 			<tr>
@@ -20,7 +20,7 @@
 					<Sort {isAsc} {handleClick} />
 					Screen width
 				</th>
-				<th colspan="2">Fluid size</th>
+				<th colspan="2">Fluid size value</th>
 				<th />
 			</tr>
 		</thead>
@@ -37,11 +37,10 @@
 <style>
 	.tracker-wrapper {
 		border-radius: var(--spacing-n5);
-		border: 3px solid var(--color-gray-light);
 	}
 
 	.tracker-wrapper--overflow {
-		max-height: 486px;
+		max-height: 447px;
 		overflow: auto;
 	}
 
@@ -55,6 +54,10 @@
 		position: sticky;
 		top: 0;
 		background-color: var(--color-gray-dark);
+	}
+
+	.tracker thead tr {
+		box-shadow: inset 0 0 0 2px var(--color-gray-medium);
 	}
 
 	.tracker :global(th) {

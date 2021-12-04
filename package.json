@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@floating-ui/dom": "^0.1.4",
 		"chart.js": "^3.4.0",
 		"chartjs-plugin-crosshair": "^1.2.0",
 		"cssnano": "^5.0.12",

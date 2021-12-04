@@ -6,18 +6,23 @@
 
 <style>
 	.legend {
+		display: inline-block;
+		width: auto;
 		list-style: none;
-		padding: 0;
+		padding: var(--spacing-1);
 		font-weight: var(--font-weight-bold);
-		display: flex;
-		align-items: baseline;
-		margin: var(--spacing-1) 0;
+		border: 2px solid var(--color-gray-medium);
+		border-radius: var(--spacing-n4);
+		background-color: var(--color-gray-medium-faded);
 	}
 
 	.legend__box {
 		display: flex;
 		align-items: center;
-		padding-right: var(--spacing-1);
+	}
+
+	.legend__box + .legend__box {
+		margin-top: var(--spacing-1);
 	}
 
 	.legend__box::before {
@@ -28,14 +33,14 @@
 		margin-right: var(--spacing-n2);
 	}
 
+	.legend__box--fluid::before {
+		border: 2px solid var(--color-gray-light);
+		background-color: var(--color-gray-medium-faded);
+	}
+
 	.legend__box--min::before {
 		border: 2px solid var(--color-secondary);
 		background-color: var(--color-secondary-faded);
-	}
-
-	.legend__box--fluid::before {
-		border: 2px solid var(--color-gray-medium);
-		background-color: var(--color-gray-medium-faded);
 	}
 
 	.legend__box--max::before {

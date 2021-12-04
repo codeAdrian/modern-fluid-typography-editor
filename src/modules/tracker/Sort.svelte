@@ -13,6 +13,7 @@
 
 <style>
 	.sort {
+		margin-left: calc(-1 * var(--spacing-n5));
 		border: 2px solid currentColor;
 		background-color: transparent;
 		border-radius: var(--spacing-n4);

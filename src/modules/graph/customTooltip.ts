@@ -6,7 +6,15 @@ export const getOrCreateTooltip = (chart) => {
 		tooltipEl.id = 'chart-tooltip';
 		tooltipEl.style.pointerEvents = 'none';
 		tooltipEl.style.position = 'absolute';
-		tooltipEl.style.transform = 'translate3d(0, 0, 0)';
+		tooltipEl.style.top = '0px';
+		tooltipEl.style.border = '2px solid var(--color-secondary-tint)';
+		tooltipEl.style.color = 'var(--color-secondary)';
+		tooltipEl.style.background = 'var(--color-secondary-faded)';
+		tooltipEl.style.fontWeight = 'var(--font-weight-bold)';
+		tooltipEl.style.fontSize = 'var(--font-size-small)';
+		tooltipEl.style.padding = 'var(--spacing-n2)';
+		tooltipEl.style.lineHeight = '1';
+		tooltipEl.style.textAlign = 'center';
 
 		const span = document.createElement('span');
 		tooltipEl.appendChild(span);
@@ -44,12 +52,16 @@ export const externalTooltipHandler = (context) => {
 	const isLeft = tooltip.caretX < chart.width / 2;
 
 	if (isLeft) {
-		tooltipEl.style.transform = 'translate3d(0,0,0)';
+		tooltipEl.style.transform = 'translate3d(-1px,calc(-50% + 3px),0)';
+		tooltipEl.style.borderRadius = '4px 4px 4px 0';
 	} else {
-		tooltipEl.style.transform = 'translate3d(-100%,0,0)';
+		tooltipEl.style.transform = 'translate3d(calc(-100% + 1px),calc(-50% + 3px),0)';
+		tooltipEl.style.borderRadius = '4px 4px 0 4px';
 	}
 
-	tooltipEl.style.padding = '8px';
+	tooltipEl.style.top = '0';
+
 	tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+	tooltipEl.style.minWidth = '20ch';
 	tooltipEl.style.top = positionY + 'px';
 };

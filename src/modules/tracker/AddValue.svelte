@@ -1,4 +1,5 @@
 <script>
+	import Stats from 'src/components/Stats.svelte';
 	import { trackers } from './store';
 	import { generateUniqueId } from './utils';
 
@@ -17,21 +18,24 @@
 	};
 </script>
 
-<div>
-	<label class="form__label" for="track-screen-width">Add screen value to track</label>
-</div>
-<form class="form" bind:this={form} on:submit={handleSubmit}>
-	<button class="form__button" type="submit"><i class="fa-solid fa-plus" /></button>
-	<input
-		class="form__input"
-		id="track-screen-width"
-		type="number"
-		min={0}
-		required
-		bind:value={screenWidth}
-	/>
-	<span class="form__unit">px</span>
-</form>
+<article class="form-wrapper">
+	<div>
+		<label class="form__label" for="track-screen-width">Add screen width to track</label>
+	</div>
+
+	<form class="form" bind:this={form} on:submit={handleSubmit}>
+		<button class="form__button" type="submit"><i class="fa-solid fa-plus" /></button>
+		<input
+			class="form__input"
+			id="track-screen-width"
+			type="number"
+			min={0}
+			required
+			bind:value={screenWidth}
+		/>
+		<span class="form__unit">px</span>
+	</form>
+</article>
 
 <style>
 	.form {
@@ -68,6 +72,7 @@
 		font-size: var(--font-size-medium);
 		color: var(--color-secondary);
 		border-right: 2px solid var(--color-secondary);
+		aspect-ratio: 1;
 	}
 
 	.form__unit {
@@ -76,5 +81,6 @@
 		border-left: 2px solid var(--color-secondary);
 		line-height: 1.5;
 		padding: var(--spacing-n1);
+		aspect-ratio: 1;
 	}
 </style>

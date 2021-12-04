@@ -8,22 +8,19 @@
 		'Willed into existence by',
 		'Pixels pushed by',
 		'Cybernatically enchanced by',
-		'Blame this guy for bugs -',
+		'Found bugs in the app? Blame ',
 		'Joy sparked by',
-		'This guy does things -',
 		'Bugs and other stuff by',
-		'Coded on Arrakis by',
+		'Made on Arrakis by',
 		'Space-time folded by',
 		'Spice harvested by',
 		'Created on the dark side of the moon by',
 		'Transmogrified into existence by',
 		'Created according to the Great Convention by',
-		'TODO: Some witty subtitle will be added here by',
+		'TODO: Some witty subtitle to be added later by',
 		'As decreed by Leto II, this was created by',
-		'Created by a Spacing guild traveller',
 		'Created according to the Shadow Proclamation by',
 		'Created according to the Codex Astartes by',
-		'Created by a fremen sandrider by the name of',
 		'Blessed by Shai Hulud and made by',
 		'An Oscar-winning performance by'
 	];
@@ -58,7 +55,7 @@
 					Adrian Bece
 				</a>
 			{:else}
-				<a href="/">&nbsp;</a>
+				<a href="/">&nbsp; </a>
 			{/if}
 		</h2>
 	</div>
