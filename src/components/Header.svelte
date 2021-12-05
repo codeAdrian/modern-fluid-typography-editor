@@ -99,13 +99,18 @@
 
 <style>
 	.header {
-		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: var(--spacing-1) var(--spacing-2);
-		margin-bottom: var(--spacing-2);
+		padding: var(--spacing-1) var(--spacing-n1);
+		margin-bottom: var(--spacing-1);
 		background-color: var(--color-gray-medium-faded);
 		border-bottom: 2px solid var(--color-gray-medium);
+
+		@media (--mq-tablet-min) {
+			margin-bottom: var(--spacing-2);
+			padding: var(--spacing-1) var(--spacing-2);
+			display: flex;
+		}
 	}
 
 	.header__title {
@@ -115,6 +120,11 @@
 	.header__subtitle {
 		font-size: var(--font-size-small);
 		color: var(--color-gray-light);
+		padding: var(--spacing-n1) 0;
+
+		@media (--mq-tablet-min) {
+			padding: var(--spacing-n4) 0 0 0;
+		}
 	}
 
 	.header__link {
@@ -139,7 +149,7 @@
 	}
 
 	.header__list > li + li {
-		margin-left: var(--spacing-n2);
+		margin-left: var(--spacing-n1);
 	}
 
 	.header__link--subtitle {

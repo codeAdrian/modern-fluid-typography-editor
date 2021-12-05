@@ -36,9 +36,13 @@
 <style>
 	canvas {
 		margin-top: calc(var(--spacing-1) + var(--spacing-n2));
-		margin-left: calc(-1 * var(--spacing-2));
 		cursor: crosshair;
 		width: 100%;
-		max-width: calc(100% + var(--spacing-2));
+		max-width: 100%;
+
+		@media (--mq-desktop-min) {
+			margin-left: calc(-1 * var(--spacing-2));
+			max-width: calc(100% + var(--spacing-2));
+		}
 	}
 </style>

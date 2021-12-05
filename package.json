@@ -19,6 +19,10 @@
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
+		"postcss": "^8.4.4",
+		"postcss-custom-media": "^8.0.0",
+		"postcss-load-config": "^3.1.0",
+		"postcss-preset-env": "^7.0.1",
 		"prettier": "^2.4.1",
 		"prettier-plugin-svelte": "^2.4.0",
 		"svelte": "^3.44.0",
@@ -33,7 +37,6 @@
 		"@floating-ui/dom": "^0.1.4",
 		"chart.js": "^3.4.0",
 		"chartjs-plugin-crosshair": "^1.2.0",
-		"cssnano": "^5.0.12",
-		"postcss-preset-env": "^7.0.1"
+		"cssnano": "^5.0.12"
 	}
 }

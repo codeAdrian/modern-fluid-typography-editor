@@ -23,19 +23,26 @@
 
 <style>
 	.tabs-wrapper {
-		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 		margin-bottom: var(--spacing-1);
 		isolation: isolate;
+
+		@media (--mq-desktop-min) {
+			display: flex;
+		}
 	}
 
 	.tabs {
 		display: flex;
+		margin-top: var(--spacing-1);
+
+		@media (--mq-desktop-min) {
+			margin-top: 0;
+		}
 	}
 
 	.tab__button {
-		min-width: calc(2 * var(--spacing-4));
 		background: transparent;
 		border-width: 0;
 		padding: var(--spacing-n1) var(--spacing-1);
@@ -47,6 +54,11 @@
 		display: block;
 		border: 2px solid currentColor;
 		border-radius: var(--spacing-n1) 0 0 var(--spacing-n1);
+
+		@media (--mq-mobileLandscape-min) {
+			min-width: calc(2 * var(--spacing-4));
+			padding: var(--spacing-n1) var(--spacing-1);
+		}
 	}
 
 	.tab__button + .tab__button {

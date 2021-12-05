@@ -76,9 +76,23 @@
 		background: var(--color-secondary-faded);
 		border-radius: var(--spacing-n2);
 		padding: var(--spacing-1) var(--spacing-1) calc(var(--spacing-1) + var(--spacing-n2));
+
+		@media (--mq-mobileLandscape-min) and (--mq-tablet-max) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (--mq-desktop-min) and (--mq-desktop-max) {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+		}
 	}
 
 	.form-list li + li {
 		margin-top: var(--spacing-1);
+
+		@media (--mq-mobileLandscape-min) and (--mq-desktop-max) {
+			margin-top: 0;
+		}
 	}
 </style>

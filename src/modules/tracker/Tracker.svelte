@@ -37,17 +37,18 @@
 <style>
 	.tracker-wrapper {
 		border-radius: var(--spacing-n5);
+		overflow: auto;
 	}
 
 	.tracker-wrapper--overflow {
 		max-height: 447px;
-		overflow: auto;
 	}
 
 	.tracker {
 		border-collapse: collapse;
 		font-weight: 700;
 		width: 100%;
+		min-width: calc((510 / 16) * 1rem);
 	}
 
 	.tracker thead {

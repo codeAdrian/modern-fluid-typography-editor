@@ -41,16 +41,27 @@
 
 <style>
 	.homepage {
-		display: grid;
 		grid-template-columns: 250px auto;
 		grid-gap: var(--spacing-4);
-		padding: 0 var(--spacing-2);
+		padding: 0 var(--spacing-n1);
+		margin-bottom: var(--spacing-2);
+
+		@media (--mq-tablet-min) {
+			padding: 0 var(--spacing-2);
+		}
+
+		@media (--mq-desktopLarge-min) {
+			display: grid;
+		}
 	}
 
 	.homepage__wrapper {
-		display: grid;
-		grid-template-columns: 500px 1fr;
+		grid-template-columns: 520px auto;
 		grid-gap: var(--spacing-2);
 		align-items: flex-start;
+
+		@media (--mq-desktop-min) {
+			display: grid;
+		}
 	}
 </style>

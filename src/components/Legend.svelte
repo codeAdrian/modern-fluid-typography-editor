@@ -6,14 +6,19 @@
 
 <style>
 	.legend {
-		display: inline-block;
-		width: auto;
 		list-style: none;
 		padding: var(--spacing-1);
 		font-weight: var(--font-weight-bold);
 		border: 2px solid var(--color-gray-medium);
 		border-radius: var(--spacing-n4);
 		background-color: var(--color-gray-medium-faded);
+		margin-top: var(--spacing-1);
+
+		@media (--mq-desktop-min) {
+			display: inline-block;
+			width: auto;
+			margin-top: 0;
+		}
 	}
 
 	.legend__box {
