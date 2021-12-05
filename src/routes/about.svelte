@@ -221,6 +221,7 @@
 		width: fit-content;
 		text-align: center;
 		max-width: 10em;
+		line-height: 1.2;
 		margin-bottom: var(--spacing-4);
 		text-shadow: 0 0 var(--spacing-n2) var(--color-primary-tint);
 		animation: glow 2s infinite linear alternate;

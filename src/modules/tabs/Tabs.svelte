@@ -54,8 +54,10 @@
 		display: block;
 		border: 2px solid currentColor;
 		border-radius: var(--spacing-n1) 0 0 var(--spacing-n1);
+		flex-grow: 1;
 
 		@media (--mq-mobileLandscape-min) {
+			flex-grow: initial;
 			min-width: calc(2 * var(--spacing-4));
 			padding: var(--spacing-n1) var(--spacing-1);
 		}

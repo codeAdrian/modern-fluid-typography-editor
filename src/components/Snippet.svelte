@@ -31,12 +31,18 @@
 
 <style>
 	.snippet {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		border: 2px solid var(--color-gray-light);
 		background-color: var(--color-gray-medium-faded);
 		border-radius: 8px;
 		color: var(--color-gray-light);
+		max-width: 100%;
+		ovverflow: auto;
+
+		@media (--mq-desktop-min) {
+			display: flex;
+		}
 	}
 
 	.snippet__wrapper {

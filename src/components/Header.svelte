@@ -105,8 +105,10 @@
 		margin-bottom: var(--spacing-1);
 		background-color: var(--color-gray-medium-faded);
 		border-bottom: 2px solid var(--color-gray-medium);
+		text-align: center;
 
 		@media (--mq-tablet-min) {
+			text-align: left;
 			margin-bottom: var(--spacing-2);
 			padding: var(--spacing-1) var(--spacing-2);
 			display: flex;
@@ -146,6 +148,11 @@
 		display: flex;
 		list-style: none;
 		padding: 0;
+		justify-content: center;
+
+		@media (--mq-tablet-min) {
+			justify-content: flex-end;
+		}
 	}
 
 	.header__list > li + li {
