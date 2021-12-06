@@ -160,13 +160,26 @@
 	<section>
 		<h2>Issues and contribution</h2>
 		<p>
-			Found any bugs or have a suggestion? Feel free to open an issue in project's GitHub
-			repository.
+			Found any bugs or have a suggestion? Feel free to open an issue in
+			<a
+				href="https://github.com/codeAdrian/modern-fluid-typography-editor"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				project's GitHub repository
+			</a>.
 		</p>
 		<p>
-			Feel free to contribute code to the project by forking the source code. Please consult the
-			"Issues" tab or contact me directly as unsolicited code contributions may be rejected if
-			they're not necessary or if they harm code quality, performance or functionality.
+			Feel free to contribute code to the project by
+			<a
+				href="https://github.com/codeAdrian/modern-fluid-typography-editor"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				forking the source code
+			</a>. Please consult the "Issues" tab or contact me directly as unsolicited code contributions
+			may be rejected if they're not necessary or if they harm code quality, performance or
+			functionality.
 		</p>
 	</section>
 </main>
@@ -248,6 +261,12 @@
 		color: var(--color-secondary);
 		text-decoration: none;
 		font-weight: var(--font-weight-bold);
+	}
+
+	a:hover,
+	a:active,
+	a:focus {
+		text-decoration: underline;
 	}
 
 	pre {

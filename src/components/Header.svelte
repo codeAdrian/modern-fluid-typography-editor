@@ -75,7 +75,7 @@
 			</li>
 			<li>
 				<a
-					href="https://github.com/codeAdrian"
+					href="https://github.com/codeAdrian/modern-fluid-typography-editor"
 					target="_blank"
 					class="header__link header__link--social"
 					rel="noopener noreferrer"

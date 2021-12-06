@@ -55,7 +55,7 @@
 		</li>
 		<li class="footer__item">
 			<a
-				href="https://github.com/codeAdrian"
+				href="https://github.com/codeAdrian/modern-fluid-typography-editor"
 				target="_blank"
 				class="footer__link footer__link--social"
 				rel="noopener noreferrer"
