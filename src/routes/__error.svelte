@@ -1,13 +1,9 @@
-<script>
-	import Image from 'svimg';
-</script>
-
 <main>
 	<div class="wrapper">
 		<h1 class="title">
-			<div class="title__text">Game over.<br />Or is it?</div>
+			<div class="title__text">Game over.<br /> Or is it?</div>
 		</h1>
-		<a class="notfound__link" href="/">Continue</a>
+		<a class="notfound__link" href="/">Start again</a>
 	</div>
 
 	<div class="graphics" />
@@ -75,7 +71,7 @@
 				transparent var(--spacing-2),
 				var(--color-secondary-faded) calc(var(--spacing-2) + 2px)
 			);
-		z-index: var(--lebvel-n1);
+		z-index: var(--level-n1);
 		animation: movement 0.7s linear infinite;
 	}
 

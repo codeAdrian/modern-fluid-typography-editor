@@ -39,77 +39,87 @@
 </script>
 
 <header class="header">
-	<div>
-		<h1 class="header__title">
-			<a class="header__link header__link--title" href="/"> Modern fluid typography editor </a>
-		</h1>
-		<h2 class:header__subtitle--ready={$currentSubtitle && hasChanged} class="header__subtitle">
-			{#if $currentSubtitle}
-				{$currentSubtitle}
-				<a
-					class="header__link header__link--subtitle"
-					href="http://codeadrian.github.io"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Adrian Bece
-				</a>
-			{:else}
-				<a href="/">&nbsp; </a>
-			{/if}
-		</h2>
-	</div>
+	<div class="header__wrapper">
+		<div>
+			<h1 class="header__title">
+				<a class="header__link header__link--title" href="/"> Modern fluid typography editor </a>
+			</h1>
+			<h2 class:header__subtitle--ready={$currentSubtitle && hasChanged} class="header__subtitle">
+				{#if $currentSubtitle}
+					{$currentSubtitle}
+					<a
+						class="header__link header__link--subtitle"
+						href="http://codeadrian.github.io"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Adrian Bece
+					</a>
+				{:else}
+					<a href="/">&nbsp; </a>
+				{/if}
+			</h2>
+		</div>
 
-	<nav>
-		<ul class="header__list">
-			<li><a class="header__link header__link--page" href="/about">About</a></li>
-			<li>
-				<a
-					href="https://twitter.com/AdrianBeceDev"
-					target="_blank"
-					class="header__link header__link--social"
-					rel="noopener noreferrer"
-				>
-					<i class="fa-brands fa-twitter" />
-				</a>
-			</li>
-			<li>
-				<a
-					href="https://github.com/codeAdrian/modern-fluid-typography-editor"
-					target="_blank"
-					class="header__link header__link--social"
-					rel="noopener noreferrer"
-				>
-					<i class="fa-brands fa-github-alt" />
-				</a>
-			</li>
-			<li>
-				<a
-					href="https://www.buymeacoffee.com/ubnZ8GgDJ"
-					target="_blank"
-					class="header__link header__link--social"
-					rel="noopener noreferrer"
-				>
-					<i class="fa-solid fa-mug-saucer" />
-				</a>
-			</li>
-		</ul>
-	</nav>
+		<nav>
+			<ul class="header__list">
+				<li><a class="header__link header__link--page" href="/about">About</a></li>
+				<li>
+					<a
+						href="https://twitter.com/AdrianBeceDev"
+						target="_blank"
+						class="header__link header__link--social"
+						rel="noopener noreferrer"
+					>
+						<i class="fa-brands fa-twitter" />
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://github.com/codeAdrian/modern-fluid-typography-editor"
+						target="_blank"
+						class="header__link header__link--social"
+						rel="noopener noreferrer"
+					>
+						<i class="fa-brands fa-github-alt" />
+					</a>
+				</li>
+				<li>
+					<a
+						href="https://www.buymeacoffee.com/ubnZ8GgDJ"
+						target="_blank"
+						class="header__link header__link--social"
+						rel="noopener noreferrer"
+					>
+						<i class="fa-solid fa-mug-saucer" />
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </header>
 
 <style>
 	.header {
-		justify-content: space-between;
-		align-items: center;
-		padding: var(--spacing-1) var(--spacing-n1);
 		margin-bottom: var(--spacing-1);
 		background-color: var(--color-gray-medium-faded);
 		border-bottom: 2px solid var(--color-gray-medium);
 		text-align: center;
 
 		@media (--mq-tablet-min) {
-			text-align: left;
 			margin-bottom: var(--spacing-2);
+			text-align: left;
+		}
+	}
+
+	.header__wrapper {
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--spacing-1) var(--spacing-n1);
+		max-width: var(--container-max);
+		margin: 0 auto;
+
+		@media (--mq-tablet-min) {
 			padding: var(--spacing-1) var(--spacing-2);
 			display: flex;
 		}

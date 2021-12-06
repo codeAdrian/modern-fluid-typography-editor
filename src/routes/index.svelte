@@ -28,10 +28,10 @@
 				<Graph />
 			{:else}
 				<AddValue />
-				<div class="homepage__wrapper">
+				<article class="homepage__wrapper">
 					<Tracker />
 					<Legend />
-				</div>
+				</article>
 			{/if}
 
 			<Snippet text={$clampValue} slot="util" />
@@ -44,7 +44,9 @@
 		grid-template-columns: 250px auto;
 		grid-gap: var(--spacing-4);
 		padding: 0 var(--spacing-n1);
-		margin-bottom: var(--spacing-2);
+		margin: 0 auto var(--spacing-2);
+		max-width: var(--container-max);
+		width: 100%;
 
 		@media (--mq-tablet-min) {
 			padding: 0 var(--spacing-2);

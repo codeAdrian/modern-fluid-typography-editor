@@ -225,7 +225,7 @@
 				transparent var(--spacing-2),
 				var(--color-secondary-faded) calc(var(--spacing-2) + 2px)
 			);
-		z-index: var(--lebvel-n1);
+		z-index: var(--level-n1);
 		animation: movement 0.7s linear infinite;
 	}
 
