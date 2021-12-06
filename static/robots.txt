@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://modern-fluid-typography.vercel.app//sitemap.xml
