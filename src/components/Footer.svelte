@@ -143,8 +143,4 @@
 	.footer__item + .footer__item {
 		margin-left: var(--spacing-n1);
 	}
-
-	.footer__icon {
-		color: var(--color-tertiary);
-	}
 </style>

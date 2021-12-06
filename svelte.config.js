@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+import imagePreprocessor from 'svimg';
 import path from 'path';
 import fs from 'fs';
 
@@ -9,11 +10,19 @@ const mediaQueries = fs.readFileSync('./src/styles/media.pcss').toString();
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess({
-		postcss: {
-			prependData: mediaQueries
-		}
-	}),
+	preprocess: [
+		imagePreprocessor({
+			inputDir: 'static',
+			outputDir: 'static/g',
+			webp: true,
+			avif: true
+		}),
+		preprocess({
+			postcss: {
+				prependData: mediaQueries
+			}
+		})
+	],
 
 	kit: {
 		adapter: adapter(),
@@ -24,10 +33,11 @@ const config = {
 			resolve: {
 				alias: {
 					src: path.resolve('./src'),
-					components: path.resolve('src/components'),
-					modules: path.resolve('src/modules'),
-					models: path.resolve('src/models'),
-					utils: path.resolve('src/utils')
+					assets: path.resolve('./src/assets'),
+					components: path.resolve('./src/components'),
+					modules: path.resolve('./src/modules'),
+					models: path.resolve('./src/models'),
+					utils: path.resolve('./src/utils')
 				}
 			}
 		}

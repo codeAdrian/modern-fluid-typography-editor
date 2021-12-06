@@ -1,7 +1,5 @@
 <script>
-	import LazyImg from 'src/components/LazyImg.svelte';
-
-	import AddValue from 'src/modules/tracker/AddValue.svelte';
+	import Image from 'svimg';
 </script>
 
 <main>
@@ -99,7 +97,7 @@
 			changes on the graph or table.
 		</p>
 		<figure>
-			<LazyImg src="/assets/editor.png" alt="Editor with text inputs with sample values set" />
+			<Image src="images/editor.png" alt="Editor with text inputs with sample values set" />
 			<figcaption>
 				Use editor to configure min and max constraints, change rate and direction and relative
 				sizing for user font preferences
@@ -111,8 +109,8 @@
 			copy the value by clicking the button on the left side or by selecting the value and copy it manually.
 		</p>
 		<figure>
-			<LazyImg
-				src="/assets/snippet.png"
+			<Image
+				src="images/snippet.png"
 				alt="Generated clamp code snippet with sample values set. Values can be copied by clicking on a button or manually selecting and copying the value."
 			/>
 			<figcaption>
@@ -126,8 +124,8 @@
 			the graph you can inspect individual values on specific screen sizes.
 		</p>
 		<figure>
-			<LazyImg
-				src="/assets/graph-increase.png"
+			<Image
+				src="images/graph-increase.png"
 				alt="Graphic overview of fluid typography behavior for default settings"
 			/>
 			<figcaption>
@@ -148,8 +146,8 @@
 		</p>
 
 		<figure>
-			<LazyImg
-				src="/assets/table.png"
+			<Image
+				src="images/table.png"
 				alt="Table view of fluid behavior for specific set of screen sizes."
 			/>
 			<figcaption>
@@ -167,7 +165,8 @@
 		</p>
 		<p>
 			Feel free to contribute code to the project by forking the source code. Please consult the
-			"Issues" tabs or contact me directly as unsolicited code contributions may be rejected.
+			"Issues" tab or contact me directly as unsolicited code contributions may be rejected if
+			they're not necessary or if they harm code quality, performance or functionality.
 		</p>
 	</section>
 </main>

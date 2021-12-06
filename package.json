@@ -29,6 +29,7 @@
 		"svelte-check": "^2.2.6",
 		"svelte-clipboard": "^1.0.0",
 		"svelte-preprocess": "^4.9.4",
+		"svimg": "^1.1.0",
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.3"
 	},

@@ -5,6 +5,7 @@
 
 	let screenWidth;
 	let form;
+	let added = false;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -15,6 +16,10 @@
 
 		trackers.update((v) => [...v, { id, width: screenWidth }]);
 		form.reset();
+		added = true;
+		setTimeout(() => {
+			added = false;
+		}, 1000);
 	};
 </script>
 
@@ -24,7 +29,13 @@
 	</div>
 
 	<form class="form" bind:this={form} on:submit={handleSubmit}>
-		<button class="form__button" type="submit"><i class="fa-solid fa-plus" /></button>
+		<button class="form__button" type="submit">
+			{#if added}
+				<i class="fa-solid fa-check" />
+			{:else}
+				<i class="fa-solid fa-plus" />
+			{/if}
+		</button>
 		<input
 			class="form__input"
 			id="track-screen-width"
@@ -44,6 +55,10 @@
 		display: inline-flex;
 		background-color: var(--color-secondary-faded);
 		margin-bottom: var(--spacing-1);
+	}
+
+	.form:focus-within {
+		box-shadow: 0 0 2px 1px var(--color-secondary);
 	}
 
 	.form__label {
@@ -73,6 +88,8 @@
 		color: var(--color-secondary);
 		border-right: 2px solid var(--color-secondary);
 		aspect-ratio: 1;
+		min-width: calc(var(--spacing-2) + var(--spacing-n3));
+		cursor: pointer;
 	}
 
 	.form__unit {

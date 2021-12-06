@@ -1,24 +1,32 @@
-<ul class="legend">
-	<li class="legend__box legend__box--min">Min value</li>
-	<li class="legend__box legend__box--fluid">Within min and max range</li>
-	<li class="legend__box legend__box--max">Max value</li>
-</ul>
+<aside class="legend-wrapper">
+	<strong>Legend</strong>
+	<ul class="legend">
+		<li class="legend__box legend__box--min">Min value</li>
+		<li class="legend__box legend__box--fluid">Within min and max range</li>
+		<li class="legend__box legend__box--max">Max value</li>
+	</ul>
+</aside>
 
 <style>
-	.legend {
-		list-style: none;
-		padding: var(--spacing-1);
+	.legend-wrapper {
 		font-weight: var(--font-weight-bold);
 		border: 2px solid var(--color-gray-medium);
 		border-radius: var(--spacing-n4);
 		background-color: var(--color-gray-medium-faded);
 		margin-top: var(--spacing-1);
+		padding: var(--spacing-1);
 
 		@media (--mq-desktop-min) {
 			display: inline-block;
 			width: auto;
 			margin-top: 0;
 		}
+	}
+
+	.legend {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-1);
 	}
 
 	.legend__box {
