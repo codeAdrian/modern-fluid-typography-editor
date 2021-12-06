@@ -5,6 +5,7 @@
 	import Legend from 'src/components/Legend.svelte';
 	import Snippet from 'src/components/Snippet.svelte';
 	import Stats from 'src/components/Stats.svelte';
+	import Example from 'src/components/Example.svelte';
 	import { clampValue, maxSize, minSize } from 'src/modules/form/store';
 	import { graphChangeEnd, graphChangeStart } from 'src/modules/graph/derived';
 	import AddValue from 'src/modules/tracker/AddValue.svelte';
@@ -17,7 +18,7 @@
 	</aside>
 
 	<section class="homepage__content">
-		<Tabs tabs={['Graph', 'Table']} let:activeTab>
+		<Tabs tabs={['Graph', 'Table', 'Example']} let:activeTab>
 			{#if activeTab === 0}
 				<Stats
 					minValue={$minSize}
@@ -26,6 +27,8 @@
 					end={$graphChangeEnd.x}
 				/>
 				<Graph />
+			{:else if activeTab === 2}
+				<Example text={$clampValue} />
 			{:else}
 				<AddValue />
 				<article class="homepage__wrapper">
