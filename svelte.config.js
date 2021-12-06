@@ -1,8 +1,8 @@
-import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import imagePreprocessor from 'svimg';
 import path from 'path';
 import fs from 'fs';
+import vercel from '@sveltejs/adapter-vercel';
 
 const mediaQueries = fs.readFileSync('./src/styles/media.pcss').toString();
 
@@ -25,7 +25,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: vercel(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',

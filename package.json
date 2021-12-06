@@ -31,13 +31,14 @@
 		"svelte-preprocess": "^4.9.4",
 		"svimg": "^1.1.0",
 		"tslib": "^2.3.1",
-		"typescript": "^4.4.3"
+		"typescript": "^4.4.3",
+		"@sveltejs/adapter-vercel": "next",
+		"cssnano": "^5.0.12"
 	},
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "^0.1.4",
 		"chart.js": "^3.4.0",
-		"chartjs-plugin-crosshair": "^1.2.0",
-		"cssnano": "^5.0.12"
+		"chartjs-plugin-crosshair": "^1.2.0"
 	}
 }
