@@ -9,19 +9,21 @@
 	</h1>
 	<section class="intro">
 		<p>
-			I was going through Josh Comeau's
-			<a href="https://css-for-js.dev/" target="_blank" rel="noopener noreferrer">
+			I was going through Josh Comeau's <a
+				href="https://css-for-js.dev/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
 				CSS for JS devs
-			</a>
-			course which is one of the best courses on CSS in general and I recommend checking it out. In one
-			of the lessions, Josh implemented a simple fluid typography editor, mainly for demonstration purposes
-			to showcase how fluid typography changes depending on the screen size.
+			</a>course which is one of the best courses on CSS in general and I recommend checking it out.
+			In one of the lessions, Josh implemented a simple fluid typography editor, mainly for
+			demonstration purposes to showcase how fluid typography changes depending on the screen size.
 		</p>
 		<p>
-			I saw an opportunity for a <strong>really fun project</strong>. I set out to build upon Josh's
-			concept and developed a fully-fledged tool that developers could use on day-to-day basis to
-			fine-tune and keep track of their fluid typography and help to keep fluid typography behavior
-			consistent accross the significant breakpoints.
+			I saw an opportunity for doing a <strong>really fun and useful project</strong>. I set out to
+			build upon Josh's concept and developed a fully-fledged tool that developers could use on a
+			day-to-day basis to fine-tune and keep track of their fluid typography and help to keep fluid
+			typography behavior consistent across the significant breakpoints.
 		</p>
 	</section>
 
@@ -36,7 +38,7 @@
 
 		<p>
 			Try resizing the screen and notice how the "About the project & user guide" adapts to screen
-			size, but is constrained at some specific minimum and maximum value. Really cool, isn't it?
+			size, but is constrained at some specific minimum and maximum value. Cool, isn't it?
 		</p>
 	</section>
 
@@ -68,14 +70,14 @@
 
 			<dt>fluid-value</dt>
 			<dd>
-				Change speed (rate). If value is positive, the final value will increase from minimum value
-				to maximum value as screen width increases. If this value is negative, the final value will
-				decrease from maximum value to minimal value as screen width incrases.
+				Change speed (rate). If a value is positive, the final value will increase from minimum
+				value to maximum value as screen width increases. If this value is negative, the final value
+				will decrease from maximum value to minimal value as screen width increases.
 			</dd>
 			<dt>relative-size</dt>
 			<dd>
 				Browser default root font size is 16px. This value can be changed by users in their browser
-				settings, usually for accessibility purposes. Positive or negative "rem" value should be
+				settings, usually for accessibility purposes. Positive or negative "rem" values should be
 				included to avoid locking font size to px value and to support user font size preferences.
 			</dd>
 		</dl>
@@ -85,7 +87,7 @@
 		<h2>Features</h2>
 		<p>Here is a short overview of some of the features of this editor:</p>
 		<ul>
-			<li>Adjust size constraints, rate and relative size</li>
+			<li>Adjust size constraints, rate, and relative size</li>
 			<li>Adapts to any root font size</li>
 			<li>Graphical overview of the final fluid values</li>
 			<li>Table view for keeping track of values on fixed screen width sizes.</li>
@@ -106,7 +108,8 @@
 		<h3>Code snippet</h3>
 		<p>
 			Based on the configured fluid settings, a CSS <code>clamp</code> code is generated. You can easily
-			copy the value by clicking the button on the left side or by selecting the value and copy it manually.
+			copy the value by clicking the button on the left side or by selecting the value and copying it
+			manually.
 		</p>
 		<figure>
 			<Image
@@ -114,14 +117,14 @@
 				alt="Generated clamp code snippet with sample values set. Values can be copied by clicking on a button or manually selecting and copying the value."
 			/>
 			<figcaption>
-				Code snippet can be copied by clicking the button or by selecting the text and copying
+				The code snippet can be copied by clicking the button or by selecting the text and copying
 				manually
 			</figcaption>
 		</figure>
 		<h3>Graph view</h3>
 		<p>
-			Graph view can give you a high level overview of fluid typography behavior. By hovering over
-			the graph you can inspect individual values on specific screen sizes.
+			Graph view can give you a general overview of fluid typography behavior. By hovering over the
+			graph you can inspect individual values on specific screen sizes.
 		</p>
 		<figure>
 			<Image
@@ -129,9 +132,9 @@
 				alt="Graphic overview of fluid typography behavior for default settings"
 			/>
 			<figcaption>
-				High-level overview of fluid typography behavior. Fluid value starts increasing from
-				min-size to max size at around 400px of viewport width and it stops at a maximum value at
-				around 1000px,
+				A high-level overview of fluid typography behavior. Fluid value starts increasing from
+				min-size to max size at around 400px of the viewport width and it stops at a maximum value
+				at around 1000px,
 			</figcaption>
 		</figure>
 		<p>
@@ -140,8 +143,8 @@
 		<h3>Table view</h3>
 
 		<p>
-			Table view can give you a more detailed overview of fluid font sizes for specific viewport
-			sizews. Viewport sizes can be easily added using the adjecent input. Likewise, individual
+			A table view can give you a more detailed overview of fluid font sizes for specific viewport
+			sizes. Viewport sizes can be easily added using the adjacent input. Likewise, individual
 			values can be removed from the list by clicking the remove button for a specific value.
 		</p>
 
@@ -151,7 +154,7 @@
 				alt="Table view of fluid behavior for specific set of screen sizes."
 			/>
 			<figcaption>
-				Minimum, maximum and fluid values are indicated in the table and values can be sorted by
+				Minimum, maximum, and fluid values are indicated in the table and values can be sorted by
 				screen size in ascending or descending order.
 			</figcaption>
 		</figure>
