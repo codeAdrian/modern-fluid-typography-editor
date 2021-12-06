@@ -86,12 +86,21 @@
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
 		}
+
+		@media (--mq-heightLarge) {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+		}
 	}
 
 	.form-list li + li {
 		margin-top: var(--spacing-1);
 
 		@media (--mq-mobileLandscape-min) and (--mq-desktop-max) {
+			margin-top: 0;
+		}
+
+		@media (--mq-heightLarge) {
 			margin-top: 0;
 		}
 	}

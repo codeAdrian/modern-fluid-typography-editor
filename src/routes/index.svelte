@@ -55,10 +55,14 @@
 		@media (--mq-desktopLarge-min) {
 			display: grid;
 		}
+
+		@media (--mq-heightLarge) {
+			display: revert;
+		}
 	}
 
 	.homepage__wrapper {
-		grid-template-columns: 520px auto;
+		grid-template-columns: 520px 320px;
 		grid-gap: var(--spacing-2);
 		align-items: flex-start;
 
