@@ -5,7 +5,7 @@
 <main>
 	<div class="wrapper">
 		<h1 class="title">
-			<div class="title__text">Gorgar will eat you.<br />Game over.</div>
+			<div class="title__text">Game over.<br />Or is it?</div>
 		</h1>
 		<a class="notfound__link" href="/">Continue</a>
 	</div>
@@ -40,7 +40,6 @@
 	}
 
 	.notfound__link {
-		display: inline-block;
 		color: var(--color-secondary);
 		background-color: var(--color-secondary-faded);
 		border: 2px solid currentColor;
@@ -83,9 +82,9 @@
 	.title__text {
 		width: fit-content;
 		text-align: center;
-		max-width: 12em;
-		line-height: 1.15;
-		margin-bottom: var(--spacing-2);
+		max-width: 10em;
+		line-height: 1.2;
+		margin-bottom: var(--spacing-4);
 		text-shadow: 0 0 var(--spacing-n2) var(--color-primary-tint);
 		animation: glow 2s infinite linear alternate;
 	}
