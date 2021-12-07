@@ -31,9 +31,15 @@
 	onMount(initChart);
 </script>
 
-<canvas bind:this={canvas} />
+<figure>
+	<canvas bind:this={canvas} />
+</figure>
 
 <style>
+	figure {
+		width: 100%;
+	}
+
 	canvas {
 		margin-top: calc(var(--spacing-1) + var(--spacing-n2));
 		cursor: crosshair;
