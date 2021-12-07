@@ -51,15 +51,14 @@
 			id="relative-size"
 			unit="rem"
 			label="Relative size"
-			min={1}
-			max={5}
+			min={-3}
+			max={3}
 			step={0.25}
 			value={relativeSize}
 		>
-			{#if $relativeSize < 1}
+			{#if $relativeSize > -1 && $relativeSize < 1}
 				<Message id="relative-size" type="warning"
-					>Relative size should be at least 1 and more to support user font size settings without
-					decreasing font size on zoom.</Message
+					>Value should be -1 and less or 1 and more to support user font size settings.</Message
 				>
 			{/if}
 		</Input>
