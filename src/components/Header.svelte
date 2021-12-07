@@ -63,42 +63,27 @@
 
 		<nav>
 			<ul class="header__list">
+				<li><a class="header__link header__link--page" href="/about">About</a></li>
 				<li>
 					<a
-						href="https://www.producthunt.com/posts/modern-fluid-typography-editor?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-modern-fluid-typography-editor"
+						href="https://twitter.com/AdrianBeceDev"
 						target="_blank"
-						><img
-							src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=322073&theme=dark"
-							alt="Modern Fluid Typography Editor - Create, fine-tune and generate CSS fluid typography code | Product Hunt"
-							style="width: 200px; height: 44px;"
-							width="200"
-							height="44"
-						/></a
+						class="header__link header__link--social"
+						rel="noopener noreferrer"
 					>
+						<i class="fa-brands fa-twitter" />
+					</a>
 				</li>
-				<li><a class="header__link header__link--page" href="/about">About</a></li>
-				{#if false}
-					<li>
-						<a
-							href="https://twitter.com/AdrianBeceDev"
-							target="_blank"
-							class="header__link header__link--social"
-							rel="noopener noreferrer"
-						>
-							<i class="fa-brands fa-twitter" />
-						</a>
-					</li>
-					<li>
-						<a
-							href="https://github.com/codeAdrian/modern-fluid-typography-editor"
-							target="_blank"
-							class="header__link header__link--social"
-							rel="noopener noreferrer"
-						>
-							<i class="fa-brands fa-github-alt" />
-						</a>
-					</li>
-				{/if}
+				<li>
+					<a
+						href="https://github.com/codeAdrian/modern-fluid-typography-editor"
+						target="_blank"
+						class="header__link header__link--social"
+						rel="noopener noreferrer"
+					>
+						<i class="fa-brands fa-github-alt" />
+					</a>
+				</li>
 				<li>
 					<a
 						href="https://www.buymeacoffee.com/ubnZ8GgDJ"
