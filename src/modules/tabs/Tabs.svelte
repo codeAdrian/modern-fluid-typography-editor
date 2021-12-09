@@ -5,7 +5,11 @@
 </script>
 
 <article class="tabs-wrapper">
-	<slot name="util" />
+	<div class="tabs-wrapper__utils">
+		<slot name="snippet" />
+		<slot name="share" />
+	</div>
+
 	<nav class="tabs">
 		{#each tabs as label, index}
 			<button
@@ -28,8 +32,23 @@
 		margin-bottom: var(--spacing-1);
 		isolation: isolate;
 
-		@media (--mq-desktop-min) {
+		@media (--mq-desktopLarge-min) {
 			display: flex;
+		}
+	}
+
+	.tabs-wrapper__utils {
+		grid-gap: var(--spacing-1);
+		margin-bottom: var(--spacing-1);
+		display: grid;
+
+		@media (--mq-tablet-min) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (--mq-desktopLarge-min) {
+			margin-bottom: 0;
+			grid-template-columns: auto auto;
 		}
 	}
 

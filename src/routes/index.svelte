@@ -3,6 +3,7 @@
 	import Graph from 'modules/graph/Graph.svelte';
 	import Tabs from 'modules/tabs/Tabs.svelte';
 	import Legend from 'src/components/Legend.svelte';
+	import ShareButton from 'src/components/ShareButton.svelte';
 	import Snippet from 'src/components/Snippet.svelte';
 	import Stats from 'src/components/Stats.svelte';
 	import { clampValue, maxSize, minSize } from 'src/modules/form/store';
@@ -34,7 +35,8 @@
 				</article>
 			{/if}
 
-			<Snippet text={$clampValue} slot="util" />
+			<Snippet text={$clampValue} slot="snippet" />
+			<ShareButton slot="share" />
 		</Tabs>
 	</section>
 </main>
