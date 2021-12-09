@@ -47,14 +47,19 @@
 
 	.snippet__wrapper {
 		padding: var(--spacing-n2) var(--spacing-n1);
-		width: calc(3 * var(--spacing-5));
+		max-width: calc(3 * var(--spacing-5));
 		overflow: hidden;
 		text-overflow: ellipsis;
+		max-width: 100%;
 	}
 
 	.snippet__code {
 		font-family: var(--font-family-mono);
 		user-select: all;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 100%;
+		white-space: break-spaces;
 	}
 
 	.snippet__button {

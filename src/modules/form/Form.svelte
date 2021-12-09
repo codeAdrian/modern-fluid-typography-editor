@@ -1,6 +1,7 @@
 <script>
 	import Input from 'components/InputWithRange.svelte';
 	import Message from 'src/components/Message.svelte';
+	import ShareButton from 'src/components/ShareButton.svelte';
 	import { fluidSize, maxSize, minSize, relativeSize, rootFontSize } from './store';
 </script>
 
