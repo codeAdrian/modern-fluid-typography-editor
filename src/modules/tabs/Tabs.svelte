@@ -72,7 +72,7 @@
 		text-align: center;
 		display: block;
 		border: 2px solid currentColor;
-		border-radius: var(--spacing-n1) 0 0 var(--spacing-n1);
+		
 		flex-grow: 1;
 
 		@media (--mq-mobileLandscape-min) {
@@ -80,11 +80,18 @@
 			min-width: calc(2 * var(--spacing-4));
 			padding: var(--spacing-n1) var(--spacing-1);
 		}
-	}
 
-	.tab__button + .tab__button {
-		border-radius: 0 var(--spacing-n1) var(--spacing-n1) 0;
-		margin-left: -2px;
+		&:first-child {
+			border-radius: var(--spacing-n1) 0 0 var(--spacing-n1);
+		}
+
+		&:last-child {
+			border-radius: 0 var(--spacing-n1) var(--spacing-n1) 0;
+		}
+
+		&:not(:first-child) {
+			margin-left: -2px;
+		}
 	}
 
 	.tab__button--active {

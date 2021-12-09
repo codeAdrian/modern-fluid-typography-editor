@@ -13,9 +13,11 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.31.1",
 		"@typescript-eslint/parser": "^4.31.1",
+		"cssnano": "^5.0.12",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
@@ -31,14 +33,13 @@
 		"svelte-preprocess": "^4.9.4",
 		"svimg": "^1.1.0",
 		"tslib": "^2.3.1",
-		"typescript": "^4.4.3",
-		"@sveltejs/adapter-vercel": "next",
-		"cssnano": "^5.0.12"
+		"typescript": "^4.4.3"
 	},
 	"type": "module",
 	"dependencies": {
 		"@floating-ui/dom": "^0.1.4",
 		"chart.js": "^3.4.0",
-		"chartjs-plugin-crosshair": "^1.2.0"
+		"chartjs-plugin-crosshair": "^1.2.0",
+		"svelte-watch-resize": "^1.0.3"
 	}
 }

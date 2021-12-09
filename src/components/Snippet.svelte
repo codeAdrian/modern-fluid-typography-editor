@@ -23,7 +23,6 @@
 	<pre
 		class="snippet__wrapper">
         <code class="snippet__code">
-
             {text}
         </code>
     </pre>
@@ -38,7 +37,7 @@
 		border-radius: 8px;
 		color: var(--color-gray-light);
 		max-width: 100%;
-		ovverflow: auto;
+		overflow: auto;
 
 		@media (--mq-desktop-min) {
 			display: flex;
